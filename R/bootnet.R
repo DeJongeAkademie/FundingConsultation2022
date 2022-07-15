@@ -1,4 +1,8 @@
-df <- read.csv("../data/for_caspar.csv")
+require("httr")
+url <- 'https://osf.io/f76rb//?action=download'
+filename <- 'dat.csv'
+GET(url, write_disk(filename, overwrite = TRUE))
+df <- read.csv(filename)
 df <- df[grep("^kt\\d", names(df))]
 library(psych)
 res <- psych::principal(df, nfactors = 10)

@@ -2,7 +2,11 @@
 # Documentation: https://github.com/joachim-gassen/ExPanDaR
 library(worcs)
 library(ExPanDaR)
-load_data()
+require("httr")
+url <- 'https://osf.io/f76rb//?action=download'
+filename <- 'dat.csv'
+GET(url, write_disk(filename, overwrite = TRUE))
+dat <- read.csv(filename)
 
 keep <- c("language", "ktversie", "kt_personal_senior",
           "kt_team", "kt_personal_ecr", "kt_thematic", "kt_thematic_co",
