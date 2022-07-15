@@ -1,4 +1,4 @@
-Codebook created on 2022-07-15 at 2022-07-15 15:15:54
+Codebook created on 2022-07-15 at 2022-07-15 16:39:54
 ================
 
 A codebook contains documentation and metadata describing the contents,
@@ -6,7 +6,7 @@ structure, and layout of a data file.
 
 ## Dataset description
 
-The data contains 2574 cases and 89 variables.
+The data contains 2574 cases and 90 variables.
 
 ## Codebook
 
@@ -98,7 +98,8 @@ The data contains 2574 cases and 89 variables.
 | pos9                    | factor          |  873 |    0.66 |      9 |         |         | 1701.00 |        | 0.82 |     |         |         |       |          |        |          |
 | institution             | factor          |  918 |    0.64 |     23 |         |         | 1656.00 |        | 0.94 |     |         |         |       |          |        |          |
 | id                      | integer         | 2574 |    0.00 |   2574 | 1295.53 | 1294.50 | 1294.50 | 747.86 |      | 1.0 | 2592.00 | 2591.00 |  0.00 |     0.02 |  -1.20 |    -6.22 |
-| applied_grant           | numeric         |  138 |    0.95 |      2 |    0.00 |    0.00 |    0.00 |   0.00 |      | 0.0 |    0.00 |    0.00 |       |          |        |          |
+| applied_grant           | numeric         | 1111 |    0.57 |      3 |    0.88 |    1.00 |    1.00 |   0.33 |      | 0.0 |    1.00 |    1.00 | -2.28 |   -15.50 |   3.18 |    10.85 |
+| got_grant               | numeric         |  973 |    0.62 |      3 |    0.88 |    1.00 |    1.00 |   0.32 |      | 0.0 |    1.00 |    1.00 | -2.41 |   -15.36 |   3.80 |    12.14 |
 | quit_ever               | integer         | 2574 |    0.00 |      2 |    0.90 |    1.00 |    1.00 |   0.30 |      | 0.0 |    1.00 |    1.00 | -2.64 |   -27.35 |   4.97 |    25.75 |
 | inst                    | factor          |  918 |    0.64 |     20 |         |         | 1656.00 |        | 0.93 |     |         |         |       |          |        |          |
 
