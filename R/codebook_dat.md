@@ -1,4 +1,4 @@
-Codebook created on 2022-07-15 at 2022-07-15 16:39:54
+Codebook created on 2022-07-15 at 2022-07-15 17:00:52
 ================
 
 A codebook contains documentation and metadata describing the contents,
@@ -6,7 +6,7 @@ structure, and layout of a data file.
 
 ## Dataset description
 
-The data contains 2574 cases and 90 variables.
+The data contains 2574 cases and 92 variables.
 
 ## Codebook
 
@@ -102,6 +102,8 @@ The data contains 2574 cases and 90 variables.
 | got_grant               | numeric         |  973 |    0.62 |      3 |    0.88 |    1.00 |    1.00 |   0.32 |      | 0.0 |    1.00 |    1.00 | -2.41 |   -15.36 |   3.80 |    12.14 |
 | quit_ever               | integer         | 2574 |    0.00 |      2 |    0.90 |    1.00 |    1.00 |   0.30 |      | 0.0 |    1.00 |    1.00 | -2.64 |   -27.35 |   4.97 |    25.75 |
 | inst                    | factor          |  918 |    0.64 |     20 |         |         | 1656.00 |        | 0.93 |     |         |         |       |          |        |          |
+| success_chance          | character       | 1158 |    0.55 |      4 |         |         | 1416.00 |        | 0.63 |     |         |         |       |          |        |          |
+| invested_time           | character       | 1158 |    0.55 |      4 |         |         | 1416.00 |        | 0.66 |     |         |         |       |          |        |          |
 
 ### Legend
 
