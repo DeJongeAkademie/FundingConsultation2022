@@ -214,6 +214,8 @@ success_chance <- c("low", "medium", "high")[(floor((dat$ktversie-1)/3)+1)]
 success_chance[dat$versie == 1 & success_chance == "medium"] <- "low"
 invested_time = c("short", "moderate", "long")[(dat$ktversie %% 3)+1]
 
+dat$success_chance <- success_chance
+dat$invested_time <- invested_time
 # Second, we multiply the kt values with the values above and normalize with the total
 # to make each kt a fraction of the total money spend.
 df_kt = as.matrix(dat[grep("^kt_", names(dat))])
