@@ -59,10 +59,13 @@ levels(dat$language)[levels(dat$language) == ""] <- NA
 
 dat$applied_grant <- NA
 dat$applied_grant[dat$successful_applications == "Ik heb nog nooit een onderzoeksaanvraag gedaan"] <- 0
-dat$applied_grant[dat$grant_success %in% c("Ja, minder dan 10% van mijn aanvragen", "Ja, 10-20% van mijn aanvragen",
+dat$applied_grant[dat$successful_applications %in% c("Ja, minder dan 10% van mijn aanvragen", "Ja, 10-20% van mijn aanvragen",
                                            "Ja, 20-30% van mijn aanvragen", "Ja, meer dan 30% van mijn aanvragen",
                                            "Nee")] <- 1
-
+dat$got_grant <- NA
+dat$got_grant[dat$successful_applications == "Nee"] <- 0
+dat$got_grant[dat$successful_applications %in% c("Ja, minder dan 10% van mijn aanvragen", "Ja, 10-20% van mijn aanvragen",
+                                                     "Ja, 20-30% van mijn aanvragen", "Ja, meer dan 30% van mijn aanvragen")] <- 1
 
 levels(dat$successful_applications)[levels(dat$successful_applications) == "Ik heb nog nooit een onderzoeksaanvraag gedaan"] <- NA
 
