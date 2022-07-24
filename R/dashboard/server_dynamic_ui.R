@@ -16,7 +16,7 @@ output$ui_expand_header <- renderUI({tagList(
     tags$script(src = "message-handler.js")
   ),
 
-  titlePanel(shiny_title),
+  titlePanel("DJA Funding Consultation"),#shiny_title
   if(!is.null(shiny_abstract)) {
     fluidRow(
       column (12,

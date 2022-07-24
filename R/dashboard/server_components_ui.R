@@ -1,18 +1,18 @@
 # This file contains the user interface code for all components.
 
-output$ui_sample <- renderUI({
-  if (!server_side_data) {
-    fileInput('infile', label = NULL)
-  } else {
-    req(uc$sample)
-    choices <- setNames(as.list(data_source$ds_id), data_source$ds_description)
-    tagList(selectInput("sample", "Sample Selection",
-                        choices,
-                        selected = uc$sample),
-            helpText("Select the sample that you want to study.")
-    )
-  }
-})
+# output$ui_sample <- renderUI({
+#   if (!server_side_data) {
+#     fileInput('infile', label = NULL)
+#   } else {
+#     req(uc$sample)
+#     choices <- setNames(as.list(data_source$ds_id), data_source$ds_description)
+#     tagList(selectInput("sample", "Sample Selection",
+#                         choices,
+#                         selected = uc$sample),
+#             helpText("Select the sample that you want to study.")
+#     )
+#   }
+# })
 
 output$ui_select_ids <- renderUI({
   req(uc$sample)
@@ -87,27 +87,27 @@ output$ui_group_factor <- renderUI({
 
 })
 
-output$ui_outlier_treatment <- renderUI({
-  req(uc$config_parsed)
-  df <- create_analysis_sample()
-  if (cross_sec_data()) avail_choices <- c(
-    "None",  sort(unique(c(lfactor$name, llogical$name)))
-  )
-  else avail_choices <- c(
-    "None",  sort(unique(c(lcs_id$name, lts_id$name, lfactor$name, llogical$name)))
-  )
-  tagList(radioButtons("outlier_treatment", "Outlier treatment",
-                       choices = list("No treatment" = 1, "Winsorization 1%/99%" = 2, "Winsorization 5%/95%" = 3,
-                                      "Truncation 1%/99%" = 4, "Truncation 5%/95%" = 5),
-                       selected = uc$outlier_treatment),
-          selectInput("outlier_factor", label = "By group factor",
-                      avail_choices,
-                      selected = isolate(uc$outlier_factor)),
-          helpText("Indicate whether you want no outlier treatment",
-                   "or whether you want outliers to be winsorized",
-                   "to the given percentile or truncated if they exceed the given percentile.",
-                   "Give a by group if you want outlier treatment to be done independently by group."))
-})
+# output$ui_outlier_treatment <- renderUI({
+#   req(uc$config_parsed)
+#   df <- create_analysis_sample()
+#   if (cross_sec_data()) avail_choices <- c(
+#     "None",  sort(unique(c(lfactor$name, llogical$name)))
+#   )
+#   else avail_choices <- c(
+#     "None",  sort(unique(c(lcs_id$name, lts_id$name, lfactor$name, llogical$name)))
+#   )
+#   tagList(radioButtons("outlier_treatment", "Outlier treatment",
+#                        choices = list("No treatment" = 1, "Winsorization 1%/99%" = 2, "Winsorization 5%/95%" = 3,
+#                                       "Truncation 1%/99%" = 4, "Truncation 5%/95%" = 5),
+#                        selected = uc$outlier_treatment),
+#           selectInput("outlier_factor", label = "By group factor",
+#                       avail_choices,
+#                       selected = isolate(uc$outlier_factor)),
+#           helpText("Indicate whether you want no outlier treatment",
+#                    "or whether you want outliers to be winsorized",
+#                    "to the given percentile or truncated if they exceed the given percentile.",
+#                    "Give a by group if you want outlier treatment to be done independently by group."))
+# })
 
 output$ui_balanced_panel <- renderUI({
   req(uc$config_parsed)
@@ -153,21 +153,21 @@ output$ui_missing_values <- renderUI({
   tagList(mytags)
 })
 
-output$ui_udv_name <- renderUI({
-  req(uc$config_parsed)
-  tagList(textInput('udv_name', "Enter name for your additional variable",""),
-          helpText("If you want to create additional variables for the analysis,",
-                   "provide a name (must not be taken) and a definition here.",
-                   "A definition can consist of the base set variables,",
-                   "parentheses and the operators",
-                   "'+', '-', '*', '/', '==', '&', '|', '<', '>', '!', 'is.na()', '^', 'exp()', 'log()', 'lead()' and 'lag()'."))
-})
+# output$ui_udv_name <- renderUI({
+#   req(uc$config_parsed)
+#   tagList(textInput('udv_name', "Enter name for your additional variable",""),
+#           helpText("If you want to create additional variables for the analysis,",
+#                    "provide a name (must not be taken) and a definition here.",
+#                    "A definition can consist of the base set variables,",
+#                    "parentheses and the operators",
+#                    "'+', '-', '*', '/', '==', '&', '|', '<', '>', '!', 'is.na()', '^', 'exp()', 'log()', 'lead()' and 'lag()'."))
+# })
 
-output$ui_udv_def <- renderUI({
-  req(uc$config_parsed)
-  tagList(textInput('udv_definition', "Enter definition for your additional variable",""),
-          actionButton("udv_submit","Submit"))
-})
+# output$ui_udv_def <- renderUI({
+#   req(uc$config_parsed)
+#   tagList(textInput('udv_definition', "Enter definition for your additional variable",""),
+#           actionButton("udv_submit","Submit"))
+# })
 
 output$ui_descriptive_table_left <- renderUI({
   req(uc$config_parsed)
