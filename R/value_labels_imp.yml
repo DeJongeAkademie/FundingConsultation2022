@@ -1,0 +1,58 @@
+sex:
+  class: factor
+  '1': Man
+  '2': Vrouw
+successful_applications:
+  class: ordered
+  '1': Nee
+  '2': Ja, minder dan 10% van mijn aanvragen
+  '3': Ja, 10-20% van mijn aanvragen
+  '4': Ja, 20-30% van mijn aanvragen
+  '5': Ja, meer dan 30% van mijn aanvragen
+language:
+  class: factor
+  '1': en
+  '2': nl
+discipline:
+  class: factor
+  '1': Humanities and social sciences
+  '2': Beta and medicine
+  '3': Economy, business, law
+pos5:
+  class: factor
+  '1': Student-PhD-Postdoc-OA = ECR
+  '2': Assistant/associate prof/UD (temporary contract)
+  '3': Assistant, associate (permanent)
+  '4': Hoogleraar/professor
+  '5': Other
+pos9:
+  class: factor
+  '1': Student/Onderzoeksassistent/junior onderzoeker
+  '2': PhD
+  '3': Postdoc
+  '4': Assistant prof/UD (temporary)
+  '5': Assistant prof/UD (tenured)
+  '6': Associate prof/UHD
+  '7': Prof / Hoogleraar
+  '8': Anders
+institution:
+  class: factor
+  '1': Academisch Medisch Centrum
+  '2': Erasmus MC
+  '3': Erasmus Universiteit Rotterdam
+  '4': Leids Universitair Medisch Centrum
+  '5': Radboud Universiteit Nijmegen
+  '6': Rijksuniversiteit Groningen
+  '7': Technische Universiteit Delft
+  '8': Technische Universiteit Eindhoven
+  '9': Universiteit Leiden
+  '10': Universiteit Maastricht
+  '11': Universiteit Twente
+  '12': Universiteit Utrecht
+  '13': Universiteit van Amsterdam
+  '14': Universiteit van Tilburg
+  '15': Vrije Universiteit Amsterdam
+  '16': Vrije Universiteit medisch centrum
+  '17': Wageningen Universiteit en Research
+  '18': Ik werk niet voor een universiteit
+  '19': Overig

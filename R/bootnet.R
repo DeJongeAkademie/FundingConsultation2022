@@ -1,44 +1,26 @@
 require("httr")
+library(psychonetrics)
+library(bootnet)
+
 url <- 'https://osf.io/f76rb//?action=download'
 filename <- 'dat.csv'
 GET(url, write_disk(filename, overwrite = TRUE))
 df <- read.csv(filename)
-df <- df[grep("^kt\\d", names(df))]
-library(psych)
-res <- psych::principal(df, nfactors = 10)
-res
+df <- df[c("kt_personal_senior", "kt_team", "kt_personal_ecr", "kt_thematic",
+           "kt_thematic_co", "kt_small_first", "kt_small_second", "kt_award",
+           "kt_first_ecr", "kt_rolling_ecr", "kt_rolling_senior")]
 
-library(psychonetrics)
-library(bootnet)
+net <- estimateNetwork(df, default = "EBICglasso", verbose = FALSE)
 
-model <- ggm(df, vars = names(df), omega = "full")
+res_boot <- bootnet(net, nBoots = 1000, nCores = 2)
 
-model <- model |> runmodel()
+net_pruned <- bootThreshold(res_boot, alpha = 0.01, verbose = TRUE, thresholdIntercepts = FALSE)
 
-model |> parameters()
+png(filename = "../results/network_pruned.png")
+plot(net_pruned, layout = "circle", label.scale = F)
+dev.off()
 
-prunedmodel <- model |> prune(alpha = 0.01, recursive = TRUE)
+png(filename = "../results/network_centrality.png")
+centralityPlot(tmp, orderBy = "Strength")
+dev.off()
 
-compare(saturated = model, pruned = prunedmodel)
-
-model_stepup <- prunedmodel |> stepup()
-
-compare(saturated = model, pruned = prunedmodel, stepup = model_stepup)
-
-net <- estimateNetwork(df, default = "ggmModSelect", verbose = FALSE)
-
-network <- 1*(net$graph != 0)
-model_frombootnet <- ggm(df, vars = names(df), omega = network) |>
-  runmodel()
-
-compare(ggmModSelect = model_frombootnet, psychonetrics = model_stepup)
-
-library("qgraph")
-stepup_net <- getmatrix(model_stepup, "omega")
-bootnet_net <- getmatrix(model_frombootnet, "omega")
-L <- averageLayout(as.matrix(stepup_net), as.matrix(bootnet_net))
-layout(t(1:2))
-qgraph(stepup_net, labels = names(df), theme = "colorblind",
-       title = "Psychonetrics estimation", layout = L)
-qgraph(bootnet_net, labels = names(df), theme = "colorblind",
-       title = "ggmModSelect estimation", layout = L)

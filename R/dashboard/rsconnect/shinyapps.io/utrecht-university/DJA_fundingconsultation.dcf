@@ -1,0 +1,13 @@
+name: DJA_fundingconsultation
+title: DJA_fundingconsultation
+username:
+account: utrecht-university
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6684327
+bundleId: 6127319
+url: https://utrecht-university.shinyapps.io/DJA_fundingconsultation/
+when: 1658653278.02782
+lastSyncTime: 1658653278.02782
+asMultiple: FALSE
+asStatic: FALSE

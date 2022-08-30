@@ -1,30 +1,9 @@
-source("label_data.R")
-# labels <- read_labels("../data/value_labels.yml")
-# labels <- labels[sapply(labels, `[[`, 1) == "factor"]
-if(!file.exists("df_imp.RData")){
-  require("httr")
-  library(missRanger)
-  url <- 'https://osf.io/f76rb//?action=download'
-  filename <- 'dat.csv'
-  GET(url, write_disk(filename, overwrite = TRUE))
-  df <- read.csv(filename)
-  df[c("id", "inst", "successful_applications", "ct", "grade", "quit")] <- NULL
-  df$ktversie <- factor(df$ktversie)
-  df$language <- factor(df$language)
-  df$sex <- factor(df$sex)
-
-
-
-  set.seed(1985)
-  imp <- missRanger::missRanger(df)
-  saveRDS(imp, "df_imp.RData")
-} else {
-  imp <- readRDS("df_imp.RData")
-}
-
-
 library(glmnet)
-df <- as.data.frame(imp)
+require("httr")
+url <- 'https://osf.io/w48vz//?action=download'
+filename <- 'imp.csv'
+GET(url, write_disk(filename, overwrite = TRUE))
+df <- read.csv(filename)
 
 xvars <- c("language",
            #"ct",
@@ -81,6 +60,7 @@ xvars <- c("language",
 x <- df[xvars]
 
 yvars <- grep("^kt_", names(df), value = TRUE)
+yvars <- yvars[!grepl("^kt_(slider|funds)", yvars)]
 
 res <- lapply(yvars, function(yvar){
   y <- df[[yvar]]
