@@ -24,7 +24,7 @@ The consultation questions has been decided in three workshops and several dicus
 You can find here answers to [Frequently Asked Questions](https://dejongeakademie.nl/faq+raadpleging+onderzoeksfinanciering/faq+research+funding+consultation/default.aspx#question=2210946) about this project. If your question is not answered on that page, please create a new issue or send and email to dja@knaw.nl.
 
  
-![the Collective Compass team present at the DJA excursion May 2022](materials/DJA_CCteam2022.jpeg)
+! [the Collective Compass team present at the DJA excursion May 2022](materials/DJA_CCteam2022.jpeg)
 From left: Cas Henckens, Chiel van Heerwaarden, Sanli Faez, Lizza Hendriks, Cynthia Liem, Maartje Aukes.
 
 
@@ -52,7 +52,7 @@ SubFolder                    | Description                     | Usage
 /R | analysis code in R programming language | to share the R scripts and notebooks
 /results | collection of analysis outcome  | for contributors to share intermediate results and staged reports
 /_syntax | code used for cleaning up and converting the online database to csv-files | shared for reproducibility and verification
------------------------------ | -------------------------------- | --------------
+
 
 The consultation also contained free-text entries that has been filled by more than 1000 Dutch academics. 
 The answers to those questions will not be shared publicly to respect participants privacy.
