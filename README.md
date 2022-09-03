@@ -27,7 +27,7 @@ The consultation questions has been decided in three workshops and several dicus
 You can find here answers to [Frequently Asked Questions](https://dejongeakademie.nl/faq+raadpleging+onderzoeksfinanciering/faq+research+funding+consultation/default.aspx#question=2210946) about this project. If your question is not answered on that page, please create a new issue or send and email to dja@knaw.nl.
 
  
-<img src="materials/DJA_CCteam2022.jpeg" alt="the Collective Compass team present at the DJA excursion May 2022", align="center">
+![the Collective Compass team present at the DJA excursion May 2022](material/DJA_CCteam2022.jpeg "CC team 2022")  
 From left: Cas Henckens, Chiel van Heerwaarden, Sanli Faez, Lizza Hendriks, Cynthia Liem, Maartje Aukes.
 
 
