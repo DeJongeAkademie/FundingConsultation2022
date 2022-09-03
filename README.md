@@ -1,7 +1,10 @@
-# De Jonge Akademie Funding Consultation <a href='https://dejongeakademie.nl/en/projects/2150102.aspx'><img src='material/logo_collective_compass.png' align="right" height="139" /></a>
+# De Jonge Akademie Funding Consultation 
+
+
+<a href='https://dejongeakademie.nl/en/projects/2150102.aspx'><img src='material/logo_collective_compass.png' align="right" height="139"></a>
 
 <!-- a brief introduction to explain what the project is about    -->
-If you could consult all academics in your country, what questions will you ask?
+*If you could consult all academics in your country, what questions will you ask?*
 
 Science policy decisions have a major impact on academicsl. However, it is not always clear who makes these decisions, and whether these decisions have really been made after broad consultation with the community—especially of those community members, who are not naturally ‘at the tables’. How can we also include these voices? And in doing this, how can we move from polarized stance-taking to a more nuanced discussion, acknowledging the real dilemmas a policy-maker may face?
 
@@ -24,7 +27,7 @@ The consultation questions has been decided in three workshops and several dicus
 You can find here answers to [Frequently Asked Questions](https://dejongeakademie.nl/faq+raadpleging+onderzoeksfinanciering/faq+research+funding+consultation/default.aspx#question=2210946) about this project. If your question is not answered on that page, please create a new issue or send and email to dja@knaw.nl.
 
  
-! [the Collective Compass team present at the DJA excursion May 2022](materials/DJA_CCteam2022.jpeg)
+<img src="materials/DJA_CCteam2022.jpeg" alt="the Collective Compass team present at the DJA excursion May 2022", align="center">
 From left: Cas Henckens, Chiel van Heerwaarden, Sanli Faez, Lizza Hendriks, Cynthia Liem, Maartje Aukes.
 
 
