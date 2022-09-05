@@ -4,7 +4,7 @@ See main repository README.md
 
 ## Where do I start?
 
-You can load this project in RStudio by opening the file called 'R.Rproj'.
+You can load this project in RStudio by opening the file called 'R.Rproj'. Note that the data are available at https://DOI.org/10.17605/OSF.IO/UCQ8E
 
 ## Project structure
 
