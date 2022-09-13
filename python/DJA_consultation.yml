@@ -1,0 +1,14 @@
+channels:
+  - defaults
+dependencies:
+  - pandas
+  - scikit-learn
+  - numpy
+  - scipy
+  - python
+  - seaborn
+  - jupyter
+  - matplotlib
+  - openpyxl
+  - spacy
+  - pyyaml
