@@ -8,7 +8,7 @@ library(openxlsx)
 library(haven)
 
 # Read STATA
-dat <- readstata13::read.dta13("../data/DJA_forDJA.dta", nonint.factors = TRUE, convert.factors = TRUE)
+dat <- readstata13::read.dta13("../data/Data_DJA.dta", nonint.factors = TRUE, convert.factors = TRUE)
 
 # Make nonsense ID number
 set.seed(1985)
@@ -55,14 +55,17 @@ dat[names(dat)[charvars]] <- NULL
 
 # Clean variable classes --------------------------------------------------
 dat_norecode <- dat
-levels(dat$language)[levels(dat$language) == ""] <- NA
+#levels(dat$language)[levels(dat$language) == ""] <- NA
 
 dat$applied_grant <- NA
 dat$applied_grant[dat$successful_applications == "Ik heb nog nooit een onderzoeksaanvraag gedaan"] <- 0
-dat$applied_grant[dat$grant_success %in% c("Ja, minder dan 10% van mijn aanvragen", "Ja, 10-20% van mijn aanvragen",
+dat$applied_grant[dat$successful_applications %in% c("Ja, minder dan 10% van mijn aanvragen", "Ja, 10-20% van mijn aanvragen",
                                            "Ja, 20-30% van mijn aanvragen", "Ja, meer dan 30% van mijn aanvragen",
                                            "Nee")] <- 1
-
+dat$got_grant <- NA
+dat$got_grant[dat$successful_applications == "Nee"] <- 0
+dat$got_grant[dat$successful_applications %in% c("Ja, minder dan 10% van mijn aanvragen", "Ja, 10-20% van mijn aanvragen",
+                                                     "Ja, 20-30% van mijn aanvragen", "Ja, meer dan 30% van mijn aanvragen")] <- 1
 
 levels(dat$successful_applications)[levels(dat$successful_applications) == "Ik heb nog nooit een onderzoeksaanvraag gedaan"] <- NA
 
@@ -140,10 +143,10 @@ dat[grep("^time_", names(dat))] <- lapply(dat[grep("^time_", names(dat))], funct
 # type <- sapply(dat, function(x){class(x)[1]})
 # lapply(dat[type == "factor"], table)
 
-dat$inst[dat$inst == 'Delft University of Technology'] <- 'Technische Universiteit Delft'
-dat$inst[dat$inst == 'Eindhoven University of Technology'] <- 'Technische Universiteit Eindhoven'
-dat$inst[dat$inst == 'Anders, niet in de lijst'] <- 'Overig'
-dat$inst <- droplevels(dat$inst)
+dat$institution[dat$institution == 'Delft University of Technology'] <- 'Technische Universiteit Delft'
+dat$institution[dat$institution == 'Eindhoven University of Technology'] <- 'Technische Universiteit Eindhoven'
+dat$institution[dat$institution == 'Anders, niet in de lijst'] <- 'Overig'
+dat$institution <- droplevels(dat$institution)
 
 
 # Make YAML with value labels ---------------------------------------------
@@ -211,19 +214,28 @@ success_chance <- c("low", "medium", "high")[(floor((dat$ktversie-1)/3)+1)]
 success_chance[dat$versie == 1 & success_chance == "medium"] <- "low"
 invested_time = c("short", "moderate", "long")[(dat$ktversie %% 3)+1]
 
+dat$success_chance <- success_chance
+dat$invested_time <- invested_time
+dat$funds_available <- c(550, 400, 900)[dat$versie]
+# The code below was for standardizing the slider scores; now we use the absolute
+# values in Euro instead
 # Second, we multiply the kt values with the values above and normalize with the total
 # to make each kt a fraction of the total money spend.
-df_kt = as.matrix(dat[grep("^kt_", names(dat))])
-
-divby <- matrix(c(
-  df1_abs_vals / 550,
-  df2_abs_vals / 400,
-  df3_abs_vals / 900), byrow = TRUE, nrow = 3)
-
-divby <- divby[dat$versie, ]
-
-df_kt <- df_kt * divby
+# df_kt = as.matrix(dat[grep("^kt_", names(dat))])
 #
+# divby <- matrix(c(
+#   df1_abs_vals / 550,
+#   df2_abs_vals / 400,
+#   df3_abs_vals / 900), byrow = TRUE, nrow = 3)
+#
+# divby <- divby[dat$versie, ]
+#
+# df_kt <- df_kt * divby
+df_kt = as.matrix(dat[grep("^kt_funds_", names(dat))])
+df_kt <- df_kt / as.numeric(dat$funds_available)
+colnames(df_kt) <- gsub("_funds", "", colnames(df_kt))
+dat <- cbind(dat, df_kt)
+
 # tmp = rowSums(df_kt)
 # table(tmp > 1)
 # exceeds <- dat[which(tmp>1), ]
@@ -234,7 +246,18 @@ df_kt <- df_kt * divby
 # openxlsx::write.xlsx(dat, gsub("[ :]", "_", paste0("data_", Sys.time(), ".xlsx")))
 
 closed_data(dat, synthetic = FALSE)
-#
-#
-# ismis <- is.na(dat)
-# names(dat)[(colSums(ismis) == nrow(dat))]
+
+
+# Impute data -------------------------------------------------------------
+
+ismiss <- is.na(dat)
+bycol <- colSums(ismiss)/nrow(dat)
+byrow <- rowSums(ismiss)/sum(bycol > 0)
+hist(byrow)
+table(byrow > .8)
+
+df_imp <- dat[byrow < .8, ]
+library(missRanger)
+set.seed(1985)
+imp <- missRanger(df_imp)
+closed_data(imp, synthetic = FALSE)

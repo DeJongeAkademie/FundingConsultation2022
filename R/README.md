@@ -1,10 +1,10 @@
 # Readme <a href='https://osf.io/zcvbs/'><img src='worcs_icon.png' align="right" height="139" /></a>
 
-<!-- Please add a brief introduction to explain what the project is about    -->
+See main repository README.md
 
 ## Where do I start?
 
-You can load this project in RStudio by opening the file called 'R.Rproj'.
+You can load this project in RStudio by opening the file called 'R.Rproj'. Note that the data are available at https://DOI.org/10.17605/OSF.IO/UCQ8E
 
 ## Project structure
 
@@ -14,7 +14,15 @@ File           | Description                | Usage
 README.md      | Description of project     | Human editable
 R.Rproj        | Project file               | Loads project 
 .worcs         | WORCS metadata YAML        | Read only     
+codebook.md | Codebook of the cleaned data | Machine created
 prepare_data.R | Script to process raw data | Human editable
+bootnet.R 	   | LASSO penalized network modeling of the KT task | Human editable
+dashboard.R | Script used to make first version of the dashboard (which was then customized) | Human editable
+label_data.R | Script to store value labels of categorical variables | Human editable
+lasso.R | Script to perform LASSO-regression predicting the KT task | Human editable
+label_data.R | Script to store value labels of categorical variables | Human editable
+lasso.R | Script to perform LASSO-regression predicting the KT task | Human editable
+umap_hdbscan.R | Script to perform non-parametric clustering of the KT task | Human editable
 
 <!--  You can consider adding the following to this file:                    -->
 <!--  * A citation reference for your project                                -->
@@ -43,66 +51,8 @@ Please refer to the vignette on [reproducing a WORCS project]() for step by step
 <!-- reproducing a WORCS project, please provide your own advice for         -->
 <!-- readers here.                                                           -->
 
-
 ## Access to data
 
-Some of the data used in this project are not publically available.
-To request access to the original data, [open a GitHub issue](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/creating-an-issue).
-
-<!--Clarify here how users should contact you to gain access to the data, or to submit syntax for evaluation on the original data.-->
-
-
-## Access to data
-
-Some of the data used in this project are not publically available.
-To request access to the original data, [open a GitHub issue](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/creating-an-issue).
-
-<!--Clarify here how users should contact you to gain access to the data, or to submit syntax for evaluation on the original data.-->
-
-
-## Access to data
-
-Some of the data used in this project are not publically available.
-To request access to the original data, [open a GitHub issue](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/creating-an-issue).
-
-<!--Clarify here how users should contact you to gain access to the data, or to submit syntax for evaluation on the original data.-->
-
-
-## Access to data
-
-Some of the data used in this project are not publically available.
-To request access to the original data, [open a GitHub issue](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/creating-an-issue).
-
-<!--Clarify here how users should contact you to gain access to the data, or to submit syntax for evaluation on the original data.-->
-
-
-## Access to data
-
-Some of the data used in this project are not publically available.
-To request access to the original data, [open a GitHub issue](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/creating-an-issue).
-
-<!--Clarify here how users should contact you to gain access to the data, or to submit syntax for evaluation on the original data.-->
-
-
-## Access to data
-
-Some of the data used in this project are not publically available.
-To request access to the original data, [open a GitHub issue](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/creating-an-issue).
-
-<!--Clarify here how users should contact you to gain access to the data, or to submit syntax for evaluation on the original data.-->
-
-
-## Access to data
-
-Some of the data used in this project are not publically available.
-To request access to the original data, [open a GitHub issue](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/creating-an-issue).
-
-<!--Clarify here how users should contact you to gain access to the data, or to submit syntax for evaluation on the original data.-->
-
-
-## Access to data
-
-Some of the data used in this project are not publically available.
-To request access to the original data, [open a GitHub issue](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/creating-an-issue).
+The data are available at https://DOI.org/10.17605/OSF.IO/UCQ8E
 
 <!--Clarify here how users should contact you to gain access to the data, or to submit syntax for evaluation on the original data.-->
