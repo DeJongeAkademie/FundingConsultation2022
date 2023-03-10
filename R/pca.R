@@ -13,9 +13,11 @@ set.seed(1566)
 fa.parallel(df)
 res_pc <- principal(df, nfactors = 3)
 print(res_pc)
-# df_plot <- data.frame(loading = as.vector(res_pc$loadings),
-#                       item = ordered(rep(names(df), 3), rev(levels = names(df))),
-#                       pc = rep(paste0("pc", 1:3), each = 11))
+df_plot <- data.frame(loading = as.vector(res_pc$loadings),
+                      item = ordered(rep(names(df), 3), rev(levels = names(df))),
+                      pc = rep(paste0("pc", 1:3), each = 11))
+
+write.csv(df_plot, "../results/pca_loadings.csv", row.names = FALSE)
 # library(ggplot2)
 # ggplot(df_plot, aes(x = pc, y = item, fill= loading)) +
 #   geom_tile()+
