@@ -6,7 +6,7 @@
 <!-- a brief introduction to explain what the project is about    -->
 *If you could consult all academics in your country, what questions will you ask?*
 
-Science policy decisions have a major impact on academicsl. However, it is not always clear who makes these decisions, and whether these decisions have really been made after broad consultation with the community—especially of those community members, who are not naturally ‘at the tables’. How can we also include these voices? And in doing this, how can we move from polarized stance-taking to a more nuanced discussion, acknowledging the real dilemmas a policy-maker may face?
+Science policy decisions have a major impact on academics. However, it is not always clear who makes these decisions, and whether these decisions have really been made after broad consultation with the community—especially of those community members, who are not naturally ‘at the tables’. How can we also include these voices? And in doing this, how can we move from polarized stance-taking to a more nuanced discussion, acknowledging the real dilemmas a policy-maker may face?
 
 With this Funding Consultation project, [De Jonge Akademie](https://dejongeakademie.nl/) wish to experiment with this broad participatory decision making. We have adopted the [participatory value evaluation method](https://www.tudelft.nl/en/tpm/pve), which has been developed by fellow researchers at the TU Delft, and has successfully been applied in large-scale citizen consultations on topics that spark fierce societal debate, such as the lifting of coronavirus measures or installation of wind turbines on land.
 
