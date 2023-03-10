@@ -1,11 +1,12 @@
 library(tidySEM)
 require("httr")
 library(psych)
+library(glmnet)
 url <- 'https://osf.io/f76rb//?action=download'
 filename <- 'dat.csv'
 GET(url, write_disk(filename, overwrite = TRUE))
 df <- read.csv(filename)
-
+#df_pc <- read.csv("../data/pca.csv", stringsAsFactors = F)
 xvars <- c("language",
            #"ct",
            "versie",

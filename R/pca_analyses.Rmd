@@ -9,6 +9,13 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidySEM)
 ```
 
+```{r file = "pca.R"}
+```
+
+```{r file = "pca_analyses.R"}
+```
+
+
 # PCA Analysis
 
 We performed principal component analysis (PCA) on the funding preferences (kt_X variables).
