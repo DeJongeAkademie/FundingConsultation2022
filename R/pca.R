@@ -1,0 +1,18 @@
+library(tidyLPA)
+require("httr")
+library(psych)
+url <- 'https://osf.io/f76rb//?action=download'
+filename <- 'dat.csv'
+GET(url, write_disk(filename, overwrite = TRUE))
+df <- read.csv(filename)
+df <- df[c("kt_personal_senior", "kt_team", "kt_personal_ecr", "kt_thematic",
+           "kt_thematic_co", "kt_small_first", "kt_small_second", "kt_award",
+           "kt_first_ecr", "kt_rolling_ecr", "kt_rolling_senior")]
+
+set.seed(1566)
+fa.parallel(df)
+res_pc <- principal(df, nfactors = 3)
+print(res_pc, cut = .4)
+df_pc <- data.frame(res_pc$scores)
+names(df_pc) <- c("senior", "thematic", "ecr")
+write.csv(df_pc, "../data/pca.csv", row.names = FALSE)
