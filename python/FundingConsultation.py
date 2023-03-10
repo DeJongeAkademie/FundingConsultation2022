@@ -58,7 +58,7 @@ def match_to_qualitative_responses(quantitative_data, qualitative_data):
     return qualitative_selection
 
 
-def export_qualitative_responses(qualitative_data, column, file_name):
+def export_qualitative_responses(qualitative_data, column, file_name, quantitative_data = [], side_info_column = ''):
     if not os.path.exists(TEXT_FOLDER):
         os.mkdir(TEXT_FOLDER)
 
@@ -71,6 +71,26 @@ def export_qualitative_responses(qualitative_data, column, file_name):
         if not pd.isna(entry[column]):
             entry_id = entry['id']
 
+            if len(side_info_column) > 0:
+                side_info = quantitative_data.loc[quantitative_data['id'] == entry_id][side_info_column].values[0]
+                header = '%s - %s:%s' % (entry_id, side_info_column, side_info)
+            else:
+                header = entry_id
+
             f = open(TARGET_FILE_PATH, 'a')
-            f.write('%s\n%s\n\n' % (entry_id, entry[column]))
+            f.write('%s\n%s\n\n' % (header, entry[column]))
             f.close()
+
+def export_qualitative_answers_for_conditions_and_column(quantitative_data, qualitative_data, conditions, column, side_info_column = ''):
+    data_selection = select_from_quantitative_data(quantitative_data, conditions)
+
+    corresponding_qualitative_answers = match_to_qualitative_responses(data_selection, qualitative_data)
+
+    conditions_string = ''
+    for condition in conditions:
+        conditions_string = conditions_string + '%s_%s' % (condition, conditions[condition])
+
+    if len(side_info_column) > 0:
+        export_qualitative_responses(corresponding_qualitative_answers, column, '%s_%s.txt' % (conditions_string, column), quantitative_data, side_info_column)
+    else:
+        export_qualitative_responses(corresponding_qualitative_answers, column, '%s_%s.txt' % (conditions_string, column))
