@@ -14,3 +14,4 @@
 !data/Property values*
 !data/Variabelen_DJA_shortlabels.csv
 *.dta
+!results/*.csv
