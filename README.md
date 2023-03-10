@@ -20,9 +20,9 @@ This project has been concieved in October 2021 by five newly elected members of
 + Sanli Faez (Utrecht University)
 + Chiel van Heerwaarden (Wageningen University)
 + Lizza Hendriks (Maastricht UMC+)
-+ Cynthia Liem (Technical University of Delft)
++ Cynthia Liem (Delft University of Technology)
 
-The consultation questions has been decided in three workshops and several dicussion sessions between November 2021 and May 2022, with assistance from [Populytics](https://populytics.nl/en/) specialists: Niek Mouter and Shannon Spruit. The project has recieved further assistance from Maarje Aukes, Tom Geijsen (Populytics), Cas Henckens, Samya Ihattaren, and Esther Ladiges.
+The consultation questions has been decided in three workshops and several dicussion sessions between November 2021 and May 2022, with assistance from [Populytics](https://populytics.nl/en/) specialists: Niek Mouter and Shannon Spruit. The project has received further assistance from Maarje Aukes, Tom Geijsen (Populytics), Cas Henckens, Samya Ihattaren, and Esther Ladiges.
 
 You can find here answers to [Frequently Asked Questions](https://dejongeakademie.nl/faq+raadpleging+onderzoeksfinanciering/faq+research+funding+consultation/default.aspx#question=2210946) about this project. If your question is not answered on that page, please create a new issue or send and email to dja@knaw.nl.
 
