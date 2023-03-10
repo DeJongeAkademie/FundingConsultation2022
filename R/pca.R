@@ -8,7 +8,7 @@ df <- read.csv(filename)
 df <- df[c("kt_personal_senior", "kt_team", "kt_personal_ecr", "kt_thematic",
            "kt_thematic_co", "kt_small_first", "kt_small_second", "kt_award",
            "kt_first_ecr", "kt_rolling_ecr", "kt_rolling_senior")]
-
+rowSums(df)
 set.seed(1566)
 fa.parallel(df)
 res_pc <- principal(df, nfactors = 3)
@@ -26,3 +26,8 @@ write.csv(df_plot, "../results/pca_loadings.csv", row.names = FALSE)
 df_pc <- data.frame(res_pc$scores)
 names(df_pc) <- c("senior", "thematic", "ecr")
 write.csv(df_pc, "../data/pca.csv", row.names = FALSE)
+
+
+library(tidySEM)
+df_pc <- df_pc[!rowSums(is.na(df_pc)) == 3,]
+res_lca <- mx_profiles(df_pc, 1:6)
