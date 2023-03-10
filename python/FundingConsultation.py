@@ -35,8 +35,11 @@ def get_variable_labels():
     return variable_labels
 
 
-def get_index_interpretations():
-    return {**yaml.safe_load(open('../data/value_labels.yml')), **yaml.safe_load(open('../data/value_labels_dat.yml'))}
+def get_query_indexes():
+    return yaml.safe_load(open('../data/value_labels.yml'))
+
+def get_textual_indexes():
+    return yaml.safe_load(open('../data/value_labels_dat.yml'))
 
 
 def select_from_quantitative_data(quantitative_data, conditions):
