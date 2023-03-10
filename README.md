@@ -86,3 +86,7 @@ ensure transparency and reproducibility. The [workflow](https://psyarxiv.com/k4w
 
 To learn how WORCS helps researchers meet the TOP-guidelines and FAIR principles,
 [read the preprint](https://osf.io/zcvbs/).
+
+# Existing reusable syntax
+
+* The file `R/pca_analyses.Rmd` contains reproducible code for reducing the 11 research funding items to 3 orthogonal dimensions, which roughly correspond to funding choices that benefit ECR, those that benefit senior scholars, and those that benefit consortia. Subsequently, we examined correlations of these three components with all other variables in the dataset, and used LASSO-penalized regression to identify the most important predictors per component. The code can be reproduced by knitting the Rmd file.

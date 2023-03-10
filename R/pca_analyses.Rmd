@@ -1,0 +1,80 @@
+---
+title: "PCA Analysis"
+output: html_document
+date: "2023-03-10"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+library(tidySEM)
+```
+
+```{r file = "pca.R"}
+```
+
+```{r file = "pca_analyses.R"}
+```
+
+
+# PCA Analysis
+
+We performed principal component analysis (PCA) on the funding preferences (kt_X variables).
+Each PC is a linear combination of the 11 kt_X variables.
+Based on Horn's parallel analysis (1965), we selected the top 3 components as their Eigenvalues exceeded those from randomly generated data.
+We interpreted the pattern of loadings of each PC to assign a “name” for it:
+
+```{r}
+tab <- read.csv("../results/pca_loadings.csv", stringsAsFactors = F)
+mat <- data.frame(Item = tab$item[1:11],
+                  matrix(tab$loading, ncol = 3))
+names(mat) <- c("Item", "senior", "thematic", "ecr")
+knitr::kable(mat, digits = 2)
+```
+# Correlation analysis
+
+For each PC, we calculated bivariate correlations with potential predictors:
+
+```{r}
+cors <- read.csv("../results/pca_cors.csv", stringsAsFactors = F)
+library(DT)
+DT::datatable(cors, rownames = FALSE) |>
+  formatRound(columns=names(cors)[-1], digits=2)
+```
+# LASSO model
+
+We also fitted LASSO-penalized regression models,
+which shrink small coefficients towards zero in order to select only relevant predictors of the PCs.
+
+We used cross-validation to determine the optimum amount of shrinkage, selecting the largest shrinkage parameter $\lambda$ that was within 1SE of the $\lambda$ with the minimum cross-validated error.
+This is a commonly used criterion to retain the most parsimoneous model that still predicts the outcome well.
+
+```{r}
+r2s <- yaml::read_yaml("../results/pca_lasso_r2cv.yml")
+```
+
+To assess overall model fit, we computed the cross-validated explained variance, $R^2_{cv}$, which can be interpreted as the percent reduction in the prediction error.
+We obtained the following $R^2_{cv}s$: 
+for the `ecr` component, $R^2_{cv} `r report(r2s[["ecr"]])`$;
+for the `senior` component, $R^2_{cv} `r report(r2s[["senior"]])`$;
+for the `thematic` component, $R^2_{cv} `r report(r2s[["thematic"]])`$.
+
+```{r}
+tab <- read.csv("../results/pca_lasso_ecr.csv", stringsAsFactors = F)
+tab <- tab[!is.na(tab[[2]]), ]
+DT::datatable(tab, rownames = FALSE, caption = paste0("LASSO regression coefficients for the ECR principal component, R2 ", report(r2s$ecr))) |>
+  formatRound(columns=names(tab)[-1], digits=2)
+```
+```{r}
+tab <- read.csv("../results/pca_lasso_senior.csv", stringsAsFactors = F)
+tab <- tab[!is.na(tab[[2]]), ]
+DT::datatable(tab, rownames = FALSE, caption = paste0("LASSO regression coefficients for the senior principal component, R2 ", report(r2s$senior))) |>
+  formatRound(columns=names(tab)[-1], digits=2)
+```
+
+```{r}
+tab <- read.csv("../results/pca_lasso_thematic.csv", stringsAsFactors = F)
+tab <- tab[!is.na(tab[[2]]), ]
+DT::datatable(tab, rownames = FALSE, caption = paste0("LASSO regression coefficients for the senior principal component, R2 ", report(r2s$thematic))) |>
+  formatRound(columns=names(tab)[-1], digits=2)
+```
+
