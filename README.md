@@ -12,6 +12,24 @@ With this Funding Consultation project, [De Jonge Akademie](https://dejongeakade
 
 In our first case, we will run a consultation on science funding: a topic that affects all academics in The Netherlands. At present, discussions are taking place about possible funding reforms, which trigger strongly polarized responses. If we would address *all* academics in the Netherlands and ask them to weigh their preferences on this matter, what insights can we gain? By choosing this method, we wish to create an evidence-based collective signal that can better inform our policymakers. You can check the [full list of questions and their accompanying descriptions](https://github.com/DeJongeAkademie/FundingConsultation2022/blob/master/material/Question_Descriptions.md).
 
+## How to contribute
+We invite all researchers to explore the data collected in this project and/or ask questions that we might be able to investigate based on this consultation. 
+
+### via issues
+If you have a question that you want to be investigated based on this data or you are curious about a certain aspect of the consultation, please [create a new issue](https://github.com/DeJongeAkademie/FundingConsultation2022/issues/new/choose). 
+
+### via pull-requests
+If you want to analyze the data yourself, your are welcome to fork the repository. We appreciate if you share back your results via sending pull-requests.
+Please note that the free-text answer are not shared on this repository. If you are interested in contributing to that part of the data analysis, please contact us via email at dja@knaw.nl.
+
+## Contributors (alphabetic order)
+
++ Caspar van Lissa (Tilburg University)
++ Ahmed Mahfouz (Leiden University)
++ Noel de Miranda (Leiden University)
++ Linnet Taylor (Tilburg University)
+
+
 ## Background of the project
 
 <!-- A few words on the history of the project-->
@@ -66,17 +84,6 @@ The answers to those questions will not be shared publicly to respect participan
 <!--  * Contact information for questions/comments                           -->
 <!--  * How people can offer to contribute to the project                    -->
 <!--  * A contributor code of conduct, https://www.contributor-covenant.org/ -->
-
-## How to contribute
-We invite all researchers to explore the data collected in this project and/or ask questions that we might be able to investigate based on this consultation. 
-
-### via issues
-If you have a question that you want to be investigated based on this data or you are curious about a certain aspect of the consultation, please [create a new issue](https://github.com/DeJongeAkademie/FundingConsultation2022/issues/new/choose). 
-
-### via pull-requests
-If you want to analyze the data yourself, your are welcome to fork the repository. We appreciate if you share back your results via sending pull-requests.
-Please note that the free-text answer are not shared on this repository. If you are interested in contributing to that part of the data analysis, please contact us via email at dja@knaw.nl.
-
 
 # Reproducibility
 
