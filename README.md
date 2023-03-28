@@ -13,7 +13,7 @@ With this Funding Consultation project, [De Jonge Akademie](https://dejongeakade
 In our first case, we will run a consultation on science funding: a topic that affects all academics in The Netherlands. At present, discussions are taking place about possible funding reforms, which trigger strongly polarized responses. If we would address *all* academics in the Netherlands and ask them to weigh their preferences on this matter, what insights can we gain? By choosing this method, we wish to create an evidence-based collective signal that can better inform our policymakers. You can check the [full list of questions and their accompanying descriptions](https://github.com/DeJongeAkademie/FundingConsultation2022/blob/master/material/Question_Descriptions.md).
 
 ## How to contribute
-We invite all researchers to explore the data collected in this project and/or ask questions that we might be able to investigate based on this consultation. 
+We invite all researchers to explore the data collected in this project and/or ask questions that we might be able to investigate based on this consultation. We thrive to share all the analysis code at an early stage. Contributors are invited to describe their reusable syntax in [the FAIR code](./FAIRcode.md)
 
 ### via issues
 If you have a question that you want to be investigated based on this data or you are curious about a certain aspect of the consultation, please [create a new issue](https://github.com/DeJongeAkademie/FundingConsultation2022/issues/new/choose). 
@@ -85,15 +85,4 @@ The answers to those questions will not be shared publicly to respect participan
 <!--  * How people can offer to contribute to the project                    -->
 <!--  * A contributor code of conduct, https://www.contributor-covenant.org/ -->
 
-# Reproducibility
 
-This project aspires to follow the Workflow for Open Reproducible Code in Science (WORCS) to
-ensure transparency and reproducibility. The [workflow](https://psyarxiv.com/k4wde/) is designed by 
-[Van Lissa et al](10.31234/osf.io/k4wde)  to meet the principles of Open Science throughout a research project. 
-
-To learn how WORCS helps researchers meet the TOP-guidelines and FAIR principles,
-[read the preprint](https://osf.io/zcvbs/).
-
-# Existing reusable syntax
-
-* The file `R/pca_analyses.Rmd` contains reproducible code for reducing the 11 research funding items to 3 orthogonal dimensions, which roughly correspond to funding choices that benefit ECR, those that benefit senior scholars, and those that benefit consortia. Subsequently, we examined correlations of these three components with all other variables in the dataset, and used LASSO-penalized regression to identify the most important predictors per component. The code can be reproduced by knitting the Rmd file.
