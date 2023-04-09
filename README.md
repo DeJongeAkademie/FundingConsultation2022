@@ -15,8 +15,8 @@ In our first case, we will run a consultation on science funding: a topic that a
 ## How to contribute
 We invite all researchers to explore the data collected in this project and/or ask questions that we might be able to investigate based on this consultation. We thrive to share all the analysis code at an early stage. Contributors are invited to describe their reusable syntax in [the FAIR code](./FAIRcode.md)
 
-### via issues
-If you have a question that you want to be investigated based on this data or you are curious about a certain aspect of the consultation, please [create a new issue](https://github.com/DeJongeAkademie/FundingConsultation2022/issues/new/choose). 
+### via discussions
+If you have a question that you want to be investigated based on this data or you are curious about a certain aspect of the consultation, please [use the discussions page](https://github.com/DeJongeAkademie/FundingConsultation2022/discussions). 
 
 ### via pull-requests
 If you want to analyze the data yourself, your are welcome to fork the repository. We appreciate if you share back your results via sending pull-requests.
@@ -24,21 +24,20 @@ Please note that the free-text answer are not shared on this repository. If you 
 
 ## Contributors (alphabetic order)
 
-+ Caspar van Lissa (Tilburg University)
-+ Ahmed Mahfouz (Leiden University)
-+ Noel de Miranda (Leiden University)
-+ Linnet Taylor (Tilburg University)
-
-
-## Background of the project
-
-<!-- A few words on the history of the project-->
-This project has been concieved in October 2021 by five newly elected members of [The Young Academy](https://www.dejongeakademie.nl/en/default.aspx)
 + Shari Boodts (Radbout University, Nijmegen)
 + Sanli Faez (Utrecht University)
 + Chiel van Heerwaarden (Wageningen University)
 + Lizza Hendriks (Maastricht UMC+)
 + Cynthia Liem (Delft University of Technology)
++ Caspar van Lissa (Tilburg University)
++ Ahmed Mahfouz (Leiden University)
++ Noel de Miranda (Leiden University)
++ Linnet Taylor (Tilburg University)
+
+## Background of the project
+
+<!-- A few words on the history of the project-->
+This project has been concieved in October 2021 by five newly elected members of [The Young Academy](https://www.dejongeakademie.nl/en/default.aspx).
 
 The consultation questions has been decided in three workshops and several dicussion sessions between November 2021 and May 2022, with assistance from [Populytics](https://populytics.nl/en/) specialists: Niek Mouter and Shannon Spruit. The project has received further assistance from Maarje Aukes, Tom Geijsen (Populytics), Cas Henckens, Samya Ihattaren, and Esther Ladiges.
 
